@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age Bracket</title>
+
+<style type="text/css">
+	body{
+		background-color: lightblue;
+	}
+
+	input{		
+		box-shadow: 2px 2px 2px #444466 inset;
+		text-indent: 5px
+	}
+
+	textarea{		
+		box-shadow: 2px 3px 2px #444466;
+		width: 300px;
+		height: 150px;
+		text-indent: 10px
+	}
+
+</style>
+</head>
+
+<body>
+
+	<h3>Demonstrates: Conditional Statements, Functions, Variables</h3>
+
+	<p>
+		<button onclick="ageBracket()">Run</button>
+	</p>
+	<p>
+		Please input your age: 
+	</p>
+	<p>
+		<input id="enterNum" placeholder="enter age">
+	</p>
+
+	<p>
+		<textarea id="displayBracket"></textarea>
+	</p>
+
+	<script>
+		function ageBracket(){
+
+			var age = [];
+
+			age.push(document.getElementById("enterNum").value);
+
+			if (age == 1) {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " year old if you were born " + age + " year ago."
+			}
+
+			else {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " years old."
+			}
+		}		
+	</script>
+
+</body>
+</html>
+
