@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save and Load Data</title>
+
+<script>
+	function save(){
+		var name = document.getElementById("name_Box").value      	//get name
+		var text = document.getElementById("display_Text").value  	//get text
+		localStorage.setItem(name, text)	//load key:name & key into memory	
+	}
+	function load(){
+		var name = document.getElementById("name_Box").value 	//get name	
+		var text = localStorage.getItem(name)				//retrive name with key
+		document.getElementById("display_Text").value = text    //display text value
+	}
+</script>
+</head>
+<body>
+	<button onclick="load()">Load</button>	<!--call load function-->
+	<button onclick="save()">Save</button>	<!--call save function-->
+
+	<p><input id="name_Box"></input></p>	<!--input box for name-->
+	<p>
+	<textarea id="display_Text" placeholder="Results"></textarea><!--text to save-->
+	</p> 
+	
+</body>
+</html>
