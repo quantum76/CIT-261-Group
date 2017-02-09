@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Add Child - DOM Manipulation Part 2</title>
+</head>
+<body>
+<h1>Adds Child or P Tag and Text</h1>
+
+<button onclick="createPara()">Click Me</button>
+
+<p id="par1">paragraph 1</p>
+<p id="par2">paragraph 2</p>
+<!--Creates a new <p> tag here and apends new text-->
+<p id="par3">paragraph 3</p>
+
+<script>
+function createPara(){
+	var para = document.createElement("p");   // creates child <p> and </p>
+	var text = document.createTextNode("New Paragraph");  // creates text node
+	para.appendChild(text);                   // adds text to created <p>
+
+	var findElement = document.getElementById("par2"); // finds existing newPara ID
+	findElement.appendChild(para);            // appends new element to existing element
+}
+</script>
+
+</body>
+</html>

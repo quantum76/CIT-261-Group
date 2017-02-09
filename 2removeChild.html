@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Tag/Element Creation - DOM Manipulation Part 2</title>
+</head>
+<body>
+
+<button onclick="withDiv()">Run Div</button>
+<button onclick="withP()">Run P</button>
+<!--Remove child - Have to reference Parent first then Child - See **Work Around -->
+<div id="parent1">
+	<p id="child1">paragraph 1</p>
+	<p id="child2">paragraph 2</p>	
+	<p id="child3">paragraph 3</p>
+
+<script>
+function withDiv(){
+	var findParent = document.getElementById("parent1"); // gets id "parent1" for var parent
+	var remChild = document.getElementById("child2");   // gets id "child2" for var child for removal
+	findParent.removeChild(remChild); 
+	}        // uses VAR "findParent" then removes VAR "remchild" 
+</script>
+
+<!--Have to refer to parent, DOM needs to know child element and its parent -->
+<!--            **Work Around                     -->
+	<p id="par1">paragraph 1</p>
+	<p id="par2">paragraph 2</p>	
+	<p id="par3">paragraph 3</p>
+
+<script>
+	function withP(){
+	var remChild1 = document.getElementById("par2"); // finds id "par2"
+	remChild1.parentNode.removeChild(remChild1);         // finds the parentNode property to find parent
+	}
+</script>
+
+</body>
+</html>

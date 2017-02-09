@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insertBefore</title>
+</head>
+<body>
+
+<h1>Demonstrates insertBefore</h1>
+
+<button onclick="createPara()">Click Me</button>
+
+<p id="para1">Paragraph 1</p> 
+<p id="para2">Paragraph 2</p>
+
+<script>
+	function createPara() { 
+		var newPara = document.createElement("p");     //adds <p></p> to "newPara"
+		var newText = document.createTextNode("Pie");  //adds "Pie" to "newText"
+		newPara.appendChild(newText);  // appends "newPara" and "newText"
+
+		var para = document.getElementById("para1");  //finds/adds id "para1" to "para"
+		para.insertBefore(newPara, para.childNodes[0]); //changing number chooses next <p>
+		//Goes to "para1" and inserts "newPara" appended data before id "para1"
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save and Load Data</title>
+
+<script>
+	function save(){
+		var name = document.getElementById("name_Box").value      	//get name
+		var text = document.getElementById("display_Text").value  	//get text
+		localStorage.setItem(name, text)	//load key:name & key into memory	
+	}
+	function load(){
+		var name = document.getElementById("name_Box").value 	//get name	
+		var text = localStorage.getItem(name)				//retrive name with key
+		document.getElementById("display_Text").value = text    //display text value
+	}
+</script>
+</head>
+<body>	
+	<button onclick="save()">Save</button>	<!--call save function-->
+	<button onclick="load()">Load</button>	<!--call load function-->
+
+	<p><input id="name_Box" placeholder="Name"></input></p>	<!--input box for name-->
+	<p>
+	<textarea id="display_Text" placeholder="Results"></textarea><!--text to save-->
+	</p> 
+
+<h3>Instructions:</h3>
+<h5>1. Enter a persons name and some text, click Save. </br>
+    2. Enter another person and some text, click Save. </br>
+    3. Enter first persons name, click load. </br>
+    4. Enter 2nd persons name, click load.
+</h5>
+</body>
+</html>

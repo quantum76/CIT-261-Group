@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Send Parameters to Function</title>
+	<style>
+		body{
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Send Parameters to function</h1>
+
+<button onclick="func2()">run</button> <!--Initiates "func2"-->
+
+<p id="display">Results</p>
+
+<script>         // 4,  2,  3 
+	function func1(v1, v2, v3) { 
+             // 4 +  (2 * 3)
+	    return v1 + v2 * v3; //Returns result to "func1(4,2,3)" within function func2.
+	}
+    //NOTE** If you remove the function "func2"
+    //   leaving "document.get" it will still work.
+	function func2() {    
+	    							//Initiates function "func1" with parameters
+	   document.getElementById("display").innerHTML = func1(4,2,3); 
+	}
+</script>	
+
+</body>
+
+</body>
+</html>
