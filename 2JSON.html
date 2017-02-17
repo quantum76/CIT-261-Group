@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+
+<body>
+
+<h1>JSON Parse & Stringify - Local Storage</h1>
+
+
+<button onclick="store()">Save/Display Array</button>
+<button onclick="load()">Load/Show Array</button>
+
+<p id="display">Results</p>
+<p id="display1">Results</p>
+
+<script>
+	function store(){               //Create array
+		var months = ["Jan", " Feb", " March", " April", " May", " June", " July"]; 
+		//saves and stringify's array with key "myMonths"
+		localStorage.setItem("myMonths", JSON.stringify(months)); 
+		//shows what will be saved.
+		document.getElementById("display").innerHTML = "<b> Saved Data: </b>" + months;		
+	}
+	function load(){		
+		//uses key "myMonths" to load array into var "loadMonths"
+		var loadMonths = localStorage.getItem("myMonths");
+		//Unstringify/parses array in variable "loadMonths"
+		var months2 = JSON.parse(loadMonths);
+		//displays array "months2"
+		document.getElementById("display1").innerHTML = "<b> Loaded Data: </b>" + months2;
+	}
+
+</script>
+<h5>
+	The 1st button will save and stringify an array and </br>
+	the 2nd button will load and parse the array </br>
+ 	consisting of the months Jan - July.
+ </h5>
+
+</body>
+</html>
