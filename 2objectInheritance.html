@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Method / Property Inheritance</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+<script>
+ //creates am object and adds properties to it.
+ function home(){ //passing parameter color from enterColor()
+ 	this.type = "Log Home";
+ 	this.acres = "2.5";
+ 	this.features = "pool, large lawn, back patio, zaccuzi";
+ 	this.color = 'Red';
+ 	//adds a method. We combine all the properties and add text for display.
+ 	this.myHome = function(){
+ 		var combined = 'Type: ' + this.type + '\n' +
+ 					   'Acers: ' + this.acres + '\n' +
+ 					   'Features: ' + this.features + '\n' +
+ 					   'Color: ' + this.color + '\n'; 					   
+ 		//displays "combined" when calling myHome()
+ 		document.getElementById("display").value = 
+ 		combined;
+ 	}
+ } 
+ //added an agency
+function agency(){		
+ 	this.name = 'Homes R Us'; 
+}
+//the two following functions demontrates ways to initilize and display data.
+function showAgency(){		
+	//copy's home() to agency. The home() is now apart of the agency.
+	agency.prototype = new home();
+	//add agency() to agent variable
+	var agent = new agency();	
+	//displays agents property called address to ID "display"
+	document.getElementById("display").value = (agent.name);	
+}
+//#2
+function showHome(){		
+	
+	agency.prototype = new home();
+	var agent = new agency();
+	//initiates myHome() which contains display code to id "display"
+	agent.myHome();
+}
+
+</script>	
+</head>
+<body>
+
+<h1>Object Creation</h1>
+<h5>Select a button to show home properties or dealership address.</h5>
+
+<p>
+	<button onclick="showAgency()">Show Agency</button> 
+	<button onclick="showHome()">Show Home</button>
+</p>
+
+<p>
+	<textarea id="display">Results</textarea>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object create</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+<script>
+ //creates am object and adds properties to it.
+ function home(color){ //passing parameter color from enterColor()
+ 	this.type = "Log Home";
+ 	this.acres = "2.5";
+ 	this.features = "pool, large lawn, back patio, zaccuzi";
+ 	this.color = color;
+ 	//adds a method. We combine all the properties and add text for display.
+ 	this.myHome = function(){
+ 		var combined = 'Type: ' + this.type + '\n' +
+ 					   'Acers: ' + this.acres + '\n' +
+ 					   'Features: ' + this.features + '\n' +
+ 					   'Color: ' + this.color + '\n';
+ 		//displays "combined" when calling myHome()
+ 		document.getElementById("display").value = 
+ 		combined;
+ 	};
+ }
+ 	//create variable johnsHome with home() and initializes home()
+	var johnsHome = new home();
+	//we can choose what to display. This displays method myHome()
+	johnsHome.myHome(); 
+ 
+ function enterColor(){		
+ 	//retreives your new color from input box ID changeColor
+	var color = document.getElementById("changeColor").value;
+ 	var johnsHome = new home(color);	//sending variable color to home()
+ 	johnsHome.myHome(); 
+}	
+
+</script>	
+</head>
+<body>
+
+	<h1>Object Creation - Properties & Methods</h1>
+	<h5>Pressing the button will show home properties.</h5>
+
+	<p>
+		<button onclick="enterColor()">Change Color</button>
+	</p>
+
+	<h5>Please type the color you prefer.</h5>
+
+	<p>
+		<input id="changeColor" type="text" name="Change Color" placeholder="Enter Color">
+	</p>
+	<p>
+		<textarea id="display">Results</textarea>
+	</p>
+
+</body>
+</html>
