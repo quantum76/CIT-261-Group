@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays and Objects</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body>
+<h1>Arrays and Objects</h1>
+<h5>Displays information from an array using objects as a key</h3>
+
+<p><button onclick="name1()">Names</button></p>
+
+<div id="display"></div>
+<div id="display1"></div>
+<div id="display2"></div>
+
+<script>
+function name1(){ //Adds array to "names". Assigns names/keys to objects
+	var names = {firstN:"Joseph", lastN:"Bingham", brother:"Ted", age:"17", birth:"1/3/00"};
+		
+		//uses name/key to access object in array to display array index.	
+	document.getElementById("display").innerHTML =                              //key 
+	 "<b>First Name </b>" + names["firstN"] + "</br><b>Last Name </b>" + names["lastN"];
+	document.getElementById("display1").innerHTML = 
+	 "<b>Bro Name </b>" + names["brother"];
+	document.getElementById("display2").innerHTML = 
+	 "<b>Age </b>" + names["age"] + "</br><b>Brith Date </b>" + names["birth"];
+}
+
+</script>
+
+</body>
+</html>
