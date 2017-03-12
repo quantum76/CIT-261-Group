@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>AJAX</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">	
+	<script type="text/javascript">	
+		function getProduct(){
+			//create xmlhttp request object
+			var xmlhttp = new XMLHttpRequest();			
+			xmlhttp.onreadystatechange = function (){     //check state and status of server
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					var response = JSON.parse(this.responseText); //parse response and assign
+					handleManualObjectResponse(response);
+				}
+			}	//choose object in dropdown/filename
+			var input = document.getElementById('objectInput').value; 
+				//defines open method and set asynch = true
+			xmlhttp.open("GET", "/ajax/" + input + ".txt", true);    
+			xmlhttp.send(); //initiates server connection			
+		}		
+		function handleManualObjectResponse(response){ 		
+			var result = "";   //create variable for output	
+			for (var count = 0; count < response.length; count++){
+				result += response[count] + "&nbsp;";
+			}			//displays result with a for loop
+			document.getElementById('display').innerHTML = result;		
+		}
+	</script>	
+</head>
+<body>
+<h1>AJAX - Consuming a JSON String</h1>
+<h5>Select an item in the list and then click Display Item</h5> 
+<select id="objectInput">
+	<option>Select Item</option> 	
+	<option value="3van">Van</option>
+	<option value="3car">Car</option>
+	<option value="3computer">Computer</option>	 	
+</select>
+<button onclick="getProduct()">Show Item</button> <!-- list available products -->
+<p id="display"></p> <!-- displays file results -->
+
+</body>
+</html>
