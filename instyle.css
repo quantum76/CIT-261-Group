@@ -1,0 +1,41 @@
+html,
+
+
+body{
+		background-color: lightblue;
+	}
+
+	h1{
+		text-shadow: 3px 3px 3px #229999;
+		box-shadow: 2px 2px 2px #229999;		
+	}
+
+	h2{
+		text-shadow: .5px .5px .5px #009900;		
+	}
+
+	h3{
+		text-shadow: .5px .5px .5px #990000;		
+	}
+
+	a{		
+		box-shadow: 2px 2px 2px #444466;
+		text-indent: 5px
+	}
+
+	input{
+		box-shadow: 2px 3px 2px #444466;
+		text-indent: 10px;
+	}
+
+	textarea{		
+		box-shadow: 2px 3px 2px #444466;
+		width: 300px;
+		height: 150px;		
+		padding: 10px;
+	}
+	
+	button{
+		width: 165px;		
+	}
+
