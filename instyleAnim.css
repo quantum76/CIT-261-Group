@@ -1,0 +1,32 @@
+html,
+
+body{
+
+} 
+
+#div2{
+	width: 100px;
+	height: 100px;
+	background: red;
+	animation-name: change;
+	animation-duration: 2.5s;
+	animation-iteration-count: 10;
+	animation-direction: alternate;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-iteration-count: 10;
+    -webkit-animation-direction: alternate;
+		  
+	}
+
+@keyframes change{
+	0%{background: red;}	
+	25%{background: blue;}
+	50%{width: 400px;}
+	50%{background: green;}	
+	
+	75%{background: blue;}
+	75%{height: 400px;}	
+	100%{background: red;}
+	100%{width: 100px;}
+}

@@ -1,0 +1,25 @@
+html,
+
+body{
+
+}
+    
+	#div1{
+		width: 100px;
+		height: 100px;
+		background: red;
+		transition: height 5s, width 5s, transform 10s;
+		transition-timing-function: cubic-bezier(.08,1.8,.87,-0.66);
+        transition-timing-function: ease;
+
+        -webkit-transition: height 5s, width 5s, transform 10s;
+		-webkit-transition-timing-function: ease-in-out;		
+        -webkit-transition-timing-function: cubic-bezier(.08,1.8,.87,-0.66);        
+	}
+
+	#div1:hover {
+		width: 300px;
+		height: 300px;
+		transform: rotate(1020deg);
+		-webkit-transform: rotate(1020deg);
+	}
