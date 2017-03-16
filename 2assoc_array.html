@@ -2,10 +2,23 @@
 <html>
 <head>
 	<title>Associative Array</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">	
 </head>
 <body>
 
+<h1>Associative Array</h1>
+
+<h5>
+	Demonstrates an associative array, using key </br>
+	names to show index values. Have to use "document.write".
+</h5>
+
+<button onclick="display()">Click Me</button>
+<p id="nowDisplay"></p>
+
 <script>
+function display()
+{
 	var box = {
 		"oranges":16,
 		"apples":3,		
@@ -16,6 +29,7 @@
 	document.write(box["apples"])
 	document.write("-")
 	document.write(box["oranges"])
+}
 </script>
 
 <!--(c) by: Jonathan Blaine -->
