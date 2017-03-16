@@ -7,72 +7,40 @@
 	
 	<script type="text/javascript">
 	var xhttp = new XMLHttpRequest();
-		function getArray(){
-			var xmlhttp = new XMLHttpRequest();
-			
-			xmlhttp.onreadystatechange = function (){
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-					var response = JSON.parse(this.responseText);
-					handleManualObjectResponse(response);					
-				}
-			}
-			var input = document.getElementById('objectInput').value;
-			
-			xmlhttp.open("GET", "/ajax/" + input + ".txt", true);
-			xmlhttp.send();
+
+	function process()
+	{
+		if (xhttp.readyState == 0 || xhttp.readyState == 4){
+			console = encodeURIComponent(document.getElementById('inventoryInput').value);
+
+			xhttp.open("GET", "/php/consoles.php?console=" + console, true);
+			xhttp.onreadystatechange = handleServerResponse;
+			xhttp.send();
+		} else {
+			setTimeout('process()', 1000);
 		}
-		
-		function handleManualObjectResponse(response){			
-			var result = "";			
-			for (var count = 0; count < response.length; count++){
-				result += response[count] + "&nbsp;";
-			}			
-			document.getElementById('display').innerHTML = result;		
+	}
+
+	function handleServerResponse()
+	{
+		if (xhttp.readyState == 4 && xhttp.status == 200){
+			xmlResponse = xhttp.responseXML;
+			xmlDocumentElement = xmlResponse.documentElement;
+			message = xmlDocumentElement.firstChild.data;
+			document.getElementById('inventoryOutput').innerHTML = message;
+			setTimeout('process()', 1000)
 		}
-
-function process(){
-	if (xhttp.readyState == 0 || xhttp.readyState == 4){
-		console = encodeURIComponent(document.getElementById('inventoryInput').value);
-
-		xhttp.open("GET", "/php/consoles.php?console=" + console, true);
-		xhttp.onreadystatechange = handleServerResponse;
-		xhttp.send();
-	} else {
-		setTimeout('process()', 1000);
 	}
-}
-
-function handleServerResponse(){
-	if (xhttp.readyState == 4 && xhttp.status == 200){
-		xmlResponse = xhttp.responseXML;
-		xmlDocumentElement = xmlResponse.documentElement;
-		message = xmlDocumentElement.firstChild.data;
-		document.getElementById('inventoryOutput').innerHTML = message;
-		setTimeout('process()', 1000)
-	}
-}
-
 </script>
 	
 </head>
 <body onload="process()">
 
-<h1>AJAX - Consuming a JSON String - Using XML Response</h1>
-
-
- 
-<select id="objectInput">
-	<option>Select Item</option> 	
-	<option value="3van">Van</option>
-	<option value="3car">Car</option>
-	<option value="3computer">Computer</option>	 	
-</select>
-<button onclick="getArray()">Display Item</button>
-
 <h1>AJAX XML Response</h1>
 
-<h5>This second box currently does not work. Our group have discussed,</br>
- 	there may be a problem with the server.</h5>
+<h5>This code currently does not work. We have discussed the problem</br>
+	in our group for ours. We are sure its a server issue.
+</h5>
 
 <p id="display">Results should post here</p>
 
