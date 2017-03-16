@@ -7,7 +7,11 @@
 
 <body>
 	<h1>CSS Manipulation with Javascript</h1>
+	<h5>
+		With this code we are directly adding style changes with tag ID's.
+	</h5>
 	<button onclick="change1()">Changes 1</button>
+	<button onclick="reload()">Reload Page</button>
 	<h3 id="c1">Change 1. Changing color to orange. I am utilizing a heading 3 here.</h3>
 	<div id="c2">Change 2. Change text to italics. This is a div tag.</div>
 	<p id="c3">Change 3. This is a P tag. Changing font size.</p>
@@ -15,9 +19,16 @@
 	
 	
 	<h1>Creating a style Element</h1>
+	<h5>
+		With this code we are adding style changes to the header with its appended element/s.
+	</h5>
 	<button onclick="change2()">Changes 2</button>
-	<h5>We are changing the color and alignment of this h5 tag and then the background by </br> 
-	creating an element and appending it to the header with its appended TextNodes.
+	<button onclick="reload()">Reload Page</button>
+	
+	<h5>
+		We are changing the color and alignment of this h5 tag and all others on the page </br> 
+		and then the background by creating an element and appending it to the header with </br> 
+		its appended TextNodes.
 	</h5>
 
 <script>
@@ -39,6 +50,10 @@
 		part1.appendChild(part3);
 		document.head.appendChild(part1);
 	}
+
+	function reload() {
+    location.reload();
+}
 </script>
 
 </body>

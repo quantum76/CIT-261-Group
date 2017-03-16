@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ontouch Triggering</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body>
+	
+	<h1>Event Triggering - Testing Phase</h1>
+	<h5>
+		The following with demonstrate several different trigger options. </br>
+		It doesn't appear to do anything at this point.
+	</h5>
+
+	<!--**************************onload event************************-->
+
+<!--This is not my code. I am attempting to figure out how it works... Testing.
+It appears it doesn't work -->
+<script type="text/javascript">
+	imageButton.setOnTouchListener(new OnTouchListener() {
+	    @Override
+	    public boolean onTouch(View v, MotionEvent event) {
+	        if(event.getAction() == MotionEvent.ACTION_UP){
+
+	            document.write("What's up");
+	            return true;
+	        }
+	        return false;
+	    }
+	});
+</script>
+</body>
+</html>

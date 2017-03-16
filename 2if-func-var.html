@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FunctionalAge Bracket</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+
+<body>
+	<h1>Conditional Statements, Functions and Variables</h1>	
+	<h5>
+		When the button is clicked it initiates the ageBracket function. The code pushes </br> 
+		data to variable containing an array. The user types an age into an input box.</br> 
+		 Using an if statement, we check on	that age and display the appropriate </br> 
+		 output for the age.
+	</h5>
+
+	<p>
+		<button onclick="ageBracket()">Run</button> <!--This button initiates the function ageBracket()-->
+	</p>
+	<p>
+		Please input your age: 
+	</p>
+	<p>
+		<input id="enterNum" placeholder="enter age">
+	</p>
+
+	<p>
+		<textarea id="displayBracket"></textarea>
+	</p>
+
+	<script>
+		function ageBracket(){ //this function is initiated with the button ageBracket.
+
+			var age = [];  //variable with an array
+
+			age.push(document.getElementById("enterNum").value);
+			//these several if statements write a sentence dependant on age entered.
+			if (age == 1) {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " year old if you were born " + age + " year ago." + '&#013';
+			}
+
+			if (age == 2) {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " years old. Your are in your terrible two's"  + '&#013';
+			}
+			if (age >= 3 && age <= 12) {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " years old. Your are a minor." + '&#013';
+			}
+			if (age >= 13 && age <= 18) {
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " years old. Your are a teenager." + '&#013';
+			}
+			if (age >= 18 && age <= 99)
+				document.getElementById("displayBracket").innerHTML += 
+				 "You are " + age + " years old. You are now an adult." + '&#013';
+			}		
+
+	</script>
+
+</body>
+</html>
+

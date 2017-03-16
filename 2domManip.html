@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Displaying Tag Parts - DOM Manipulation Part 1</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body>
+
+<h1>DOM Manipulation</h1>
+<H3 id="tagH3">nodeName & nodeType</H3>
+
+<h5>This code display's the different parts of HTML tags and the type of node.</h5>
+
+<button onclick="getNodeName()">Node Name</button>
+<button onclick="getNodeType()">Node Type</button>
+
+<p id="display"></p>
+
+<script>                         
+	function getNodeName(){    // The html output will result in H1
+	document.getElementById("display").innerHTML =
+	document.getElementById("tagH3").nodeName;  //node name
+    }
+    function getNodeType(){    // The html output will result in 1
+	document.getElementById("display").innerHTML = 
+	document.getElementById("tagH3").nodeType;  //node type
+	}
+</script>
+
+</body>
+</html>

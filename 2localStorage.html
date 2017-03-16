@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Save and Load Data</title>
+	<title>Save and Load Data</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
 
 <script>
 	function save(){
@@ -16,7 +17,17 @@
 	}
 </script>
 </head>
-<body>	
+<body>
+	<h1>Local Storage API - Storing and retrieving simple data</h5>
+	<h5>We can save data by the setItem method and retrieve it by the getItem method.</h5>
+	<h3>Instructions:</h3>
+	<h5>1. Enter a persons name and some text, click Save. </br>
+	    2. Enter another person and some text, click Save. </br>
+	    3. Enter first persons name, click load. </br>
+	    4. Enter 2nd persons name, click load. </br></br>
+	   	Note: It is case sensitive.
+	</h5>	
+
 	<button onclick="save()">Save</button>	<!--call save function-->
 	<button onclick="load()">Load</button>	<!--call load function-->
 
@@ -25,11 +36,6 @@
 	<textarea id="display_Text" placeholder="Results"></textarea><!--text to save-->
 	</p> 
 
-<h3>Instructions:</h3>
-<h5>1. Enter a persons name and some text, click Save. </br>
-    2. Enter another person and some text, click Save. </br>
-    3. Enter first persons name, click load. </br>
-    4. Enter 2nd persons name, click load.
-</h5>
+<
 </body>
 </html>

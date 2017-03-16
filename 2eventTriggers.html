@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Triggering</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body onload="showText2()">
+	
+	<h1>Event Triggering</h1>
+	<h5>
+		The following with demonstrate several different trigger options
+	</h5>
+
+	<!--**************************onload event************************-->
+	<h3>Triggered by onload event</h3>
+	<h5>The onload event is located in body tag</h5>
+
+	<script type="text/javascript">
+		function showText2()
+		{
+			document.getElementById("p2").innerHTML =
+				"Display this when page loads";
+		}
+	</script>
+	
+	<p id="p2">Results:</p>
+	<p>______________________________________________________________</p>
+	<!--end-->
+	<!--*************************onclick event************************-->
+	<h3>Triggered by onclick event</h3>	
+
+	<script type="text/javascript">
+		function showText1()
+		{
+			document.getElementById("p1").innerHTML = "Hello People";
+		}
+	</script>
+
+	<button onclick="showText1()">Show Text</button>
+
+	<p id="p1">Results:</p>
+	<p>_____________________________________________________________</p>
+	<!--end-->
+	<!--*************************onkeydown event************************-->
+	<h3>Triggered by onkeydown event</h3>
+
+	<script type="text/javascript">
+		function showText3()
+		{
+			document.getElementById("p3").innerHTML = "Hello, Amazing!!";
+		}
+	</script>
+
+	<input type="text" onkeydown="showText3()" value="Select & press any key">
+
+	<p id="p3">Results:</p>
+	<p>_____________________________________________________________</p>
+	<!--end-->
+	<!--************************* event************************-->
+	<h3>Triggered by mouseover and mouseout event</h3>
+
+	<h2	onmouseover="style.color='green'"
+		onmouseout="style.color='black'">On mouse over your text will change to green
+	</h2>
+
+	<img onmouseover="large(this)" onmouseout="small(this)" border="1" 
+	src="/pics/DigiR.jpg" width="159" height="21">
+
+	<script>
+		function large(x) {		    
+		    x.style.width = "637px";
+		    x.style.height = "84px";
+		}
+
+		function small(x) {		   
+		    x.style.width = "319px";
+		    x.style.height = "42px";
+		}
+	</script>	
+	<p>_____________________________________________________________</p>
+	<!--end-->
+
+
+	
+
+</body>
+</html>

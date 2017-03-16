@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body>
+
+<h1>Canvas</h1>
+
+<h3>This canvas example draws cicles</h3>
+
+<canvas id="smilie" width="300" height="200" style="border:5px solid #d3d353;">
+	Your browser does not support HTML5 canvas tag.</canvas>
+
+<script>
+	var c = document.getElementById("smilie");
+	var ctx = c.getContext("2d");
+	ctx.fillStyle = "#d3d353";
+	ctx.beginPath();	
+	ctx.arc(150,120,30,0,1*Math.PI);
+	ctx.stroke();
+
+	var c = document.getElementById("smilie");
+	var ctx = c.getContext("2d");
+	ctx.fillStyle = "#d3d353";
+	ctx.beginPath();
+	ctx.arc(100,70,15,0,2*Math.PI);
+	ctx.stroke();
+
+	var c = document.getElementById("smilie");
+	var ctx = c.getContext("2d");
+	ctx.fillStyle = "#d3d353";
+	ctx.beginPath();
+	ctx.arc(200,70,15,0,2*Math.PI);
+	ctx.stroke();
+</script>
+
+<p>_______________________________________________________________</p>
+
+<canvas id="canvas" width="300" height="100">
+	The browswer does not support HTML5 canvas tag.</canvas>
+<script>
+	var c = document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	//Create
+	var grd = ctx.createRadialGradient(150,50,5,150,60,150);
+	grd.addColorStop(0,"blue");
+	grd.addColorStop(1,"red");
+	//Fill
+	ctx.fillStyle = grd;
+	ctx.fillRect(0,10,300,100);
+</script>
+
+<p>_______________________________________________________________</p>
+
+<canvas id="canvasText" width="460" height="100">
+	The browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+	var c = document.getElementById("canvasText");
+	var ctx = c.getContext("2d");
+	ctx.font = "40px Georgia";
+	ctx.strokeText("Hello people of the world",10,70);
+</script>
+<p>_______________________________________________________________</p>
+
+<p>Image:</p>
+<img id="digital" src="/pics/DigiR.png" width="637" height="84">
+
+<p>Canvas:</p>
+<canvas id="canvasDraw" width="637" height="84">
+	The browser does not support HTML5 canvas tag.
+</canvas>
+
+<p><button onclick="canvas()">Draw</button></p>
+
+<script>
+	function canvas()
+	{
+	    var c = document.getElementById("canvasDraw");
+	    var ctx = c.getContext("2d");
+	    var img = document.getElementById("digital");
+	    ctx.drawImage(img,0,0);
+	}
+</script>
+</body>
+</html>

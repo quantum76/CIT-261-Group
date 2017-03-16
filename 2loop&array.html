@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loop through an array of Name</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
+</head>
+<body>
+	<h1>Loop & Array</h1>
+	<h5>This code demonstrates the use of a FOR loop and an array. It loops through the array </br>
+	 one index at a time and displaying it onto the screen. It displays the first name and </br>
+	 then adds the last name on each loop.
+	<p>
+		<button onclick="run()">Run Loop</button>
+	</p>
+	<p id="display"></p>
+
+	<script>
+		function run()
+		{
+			// This is an array with my family names in it.
+			var family = ["Dan","Camille","Jason","Margaret","Kent"];
+		    // This for loop, loops through each index one at a time and adds
+		    //    the last name from within the curly brackets.
+			for (i = 0; i < family.length; i++) {
+				document.getElementById("display").innerHTML +=
+					"<p>" + family[i] + " Smith" + "</p>";
+			}
+		}
+	// (c) by: Jonathan Blaine
+	</script>
+</body>
+</html>

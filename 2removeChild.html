@@ -2,16 +2,24 @@
 <html>
 <head>
 	<title>JavaScript Tag/Element Creation - DOM Manipulation Part 2</title>
+	<link rel="stylesheet" type="text/css" href="instyle.css" media="screen">
 </head>
 <body>
 
+<h1>Remove Child or P</h1>
+<h3>
+	<u>Run Div</u> removes a "p" tag within a div "tag" and </br>
+	<u>Run P</u> removes a "p" tag.	
+</h3>
 <button onclick="withDiv()">Run Div</button>
 <button onclick="withP()">Run P</button>
 <!--Remove child - Have to reference Parent first then Child - See **Work Around -->
+
+<p><b>Part 1 - With Div</b></p>
 <div id="parent1">
 	<p id="child1">paragraph 1</p>
 	<p id="child2">paragraph 2</p>	
-	<p id="child3">paragraph 3</p>
+	<p id="child3">paragraph 3</p>	
 
 <script>
 function withDiv(){
@@ -20,7 +28,7 @@ function withDiv(){
 	findParent.removeChild(remChild); 
 	}        // uses VAR "findParent" then removes VAR "remchild" 
 </script>
-
+<p><b>Part 2 - Without Div</b></p>
 <!--Have to refer to parent, DOM needs to know child element and its parent -->
 <!--            **Work Around                     -->
 	<p id="par1">paragraph 1</p>
@@ -34,5 +42,8 @@ function withDiv(){
 	}
 </script>
 
+<h5>
+	*Note: Parent has to be referenced before Child for both examples to work.
+</h5>
 </body>
 </html>
